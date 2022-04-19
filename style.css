@@ -1,5 +1,5 @@
 * {
-    paddiing: 0;
+    padding: 0;
     margin: 0;
     box-sizing:border-box;
 }
@@ -7,6 +7,7 @@ body {
     font-family: 'Lexend Deca', sans-serif;
     background-color: hsl(0, 0%, 95%);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -14,18 +15,55 @@ body {
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 1vh;
+    height: 90%;
     margin: 4em auto;
-    border-radius: 8px;
+
+}
+@media (min-width: 850px) {
+    .container {
+    flex-direction: row;
+    height: 80%;
+    margin: 6em auto;
+    width: 65%;
+    }
 }
 .sedans {
 background-color: hsl(31, 77%, 52%);
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+
+}
+@media (min-width: 850px) {
+    .sedans {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    }
 }
 .suvs {
 background-color: hsl(184, 100%, 22%);
 }
+@media (min-width: 850px) {
+    .suvs {
+    display: flex;
+    flex-direction: column;
+    }
+}
 .luxury {
 background-color: hsl(179, 100%, 13%);
+border-bottom-right-radius: 8px;
+border-bottom-left-radius: 8px;
+}
+@media (min-width: 850px) {
+    .luxury {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 0px;
+    display: flex;
+    flex-direction: column;
+}
 }
 .heading {
     font-family: 'Big Shoulders Display';
@@ -37,6 +75,7 @@ background-color: hsl(179, 100%, 13%);
     color: hsla(0, 0%, 100%, 0.75);
     font-size: 15px;
     line-height: 2em;
+    margin-bottom: 5em;
 }
 .learn {
     background-color: hsl(0, 0%, 95%);
@@ -46,17 +85,39 @@ background-color: hsl(179, 100%, 13%);
     font-family: 'Lexend Deca', sans-serif;
     font-size: 15px;
     padding: 1em 2em;
-    margin-top: 2em;
-    margin-bottom: 3.5em;
+    margin-top: auto;
+    margin-bottom: 3em;
+    max-width: 50%;
+}
+.learn:hover {
+    cursor: pointer;
 }
 #sedan-button {
     color: hsl(31, 77%, 52%);
+    border:hsl(31, 77%, 52%) solid 3px;
+}
+#sedan-button:hover,
+#suv-button:hover,
+#luxury-button:hover {
+    border: hsl(0, 0%, 95%) solid 3px;
+    color:hsl(0, 0%, 95%);
+}
+#sedan-button:hover {
+    background-color: hsl(31, 77%, 52%);
 }
 #suv-button {
     color: hsl(184, 100%, 22%);
+    border:hsl(184, 100%, 22%) solid 3px;
+}
+#suv-button:hover {
+    background-color:  hsl(184, 100%, 22%);
 }
 #luxury-button {
     color:hsl(179, 100%, 13%);
+    border:hsl(179, 100%, 13%) solid 3px;
+}
+#luxury-button:hover {
+    background-color: hsl(179, 100%, 13%);
 }
 .description,
 .learn,
@@ -66,6 +127,15 @@ background-color: hsl(179, 100%, 13%);
 }
 .auto-image {
     margin-top: 3em;
-    width: 6em;
-    height: 4em;
+    width: 4.5em;
+    height: 2.5em;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top: auto;
+    margin-bottom:10px;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
 }
